@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zzx.dao.AnnouncementDao">
+<mapper namespace="com.blog.dao.AnnouncementDao">
 
     <resultMap id="Announcement" type="Announcement">
         <id property="id" column="announcement_id"/>
