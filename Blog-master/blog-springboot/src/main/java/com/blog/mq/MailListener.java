@@ -27,6 +27,7 @@ public class MailListener {
     @Autowired
     private JavaMailSender mailSender;
 
+
     @Autowired
     private UserService userService;
 
@@ -40,7 +41,7 @@ public class MailListener {
         String code = map.get("code");
 
         try {
-//            this.sendMail(mail, code);
+            this.sendMail(mail, code);
             Thread.sleep(6000);
             userService.updateMailSendState(mail, code, MailConfig.MAIL_STATE_OK);
             log.info(mail + "-" + code + "-发送成功");

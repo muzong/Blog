@@ -132,17 +132,13 @@ public class UserService implements UserDetailsService {
     @Transactional(rollbackFor = Exception.class)
     public void register(User userToAdd, String mailCode, String inviteCode) throws RuntimeException {
 
-
         //验证码无效 throw 异常
         if (!checkMailCode(userToAdd.getMail(), mailCode)) {
             throw new RuntimeException("验证码错误");
         }
-
-
         //有效
         //查询邀请码是否有效
         Code code = codeDao.findCodeById(inviteCode);
-
         if (code == null || code.getState() != 0) {
             //无效 throw 异常
             throw new RuntimeException("邀请码无效");
@@ -152,15 +148,12 @@ public class UserService implements UserDetailsService {
         if (userDao.findUserByName(username) != null) {
             throw new RuntimeException("用户名已存在");
         }
-
         if (userDao.findUserByMail(userToAdd.getMail()) != null) {
             throw new RuntimeException("邮箱已使用");
         }
-
         List<Role> roles = new ArrayList<>(1);
         roles.add(roleService.findRoleByName("USER"));
-        userToAdd.setRoles(roles);//新注册用户赋予USER权限
-
+        userToAdd.setRoles(roles);  //新注册用户赋予USER权限
         final String rawPassword = userToAdd.getPassword();
         userToAdd.setPassword(encoder.encode(rawPassword));//加密密码
         userToAdd.setState(1);//正常状态
