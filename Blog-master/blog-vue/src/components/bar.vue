@@ -152,14 +152,15 @@
         immediate: true,
         handler(to, from) {
           if (to === '/') {
-            this.activeIndex = '1'
-          } else if (to === '/message') {
-            this.activeIndex = '2'
-          } else if (to === '/announcement') {
-            this.activeIndex = '3'
-          } else {
-            this.activeIndex = '4'
+            this.showSearch = true
           }
+          // else if (to === '/message') {
+          //   this.activeIndex = '2'
+          // } else if (to === '/announcement') {
+          //   this.activeIndex = '3'
+          // } else {
+          //   this.activeIndex = '4'
+          // }
         }
       }
     },
