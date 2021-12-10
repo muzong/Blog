@@ -265,7 +265,7 @@
         }
         user.updatePassword(this.oldPassword, this.newPassword, this.updatePwdMailCode).then(res => {
           this.$message({
-            message: '修改成功',
+            message: '修改密码成功，请重新登录',
             type: 'success'
           });
           this.$store.commit('logout')//清除token等信息

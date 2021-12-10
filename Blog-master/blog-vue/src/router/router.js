@@ -19,15 +19,32 @@ import codeManage from '@/views/codeManage'
 import announcementManage from '@/views/announcementManage'
 import blogManage from '@/views/blogManage'
 import logManage from '@/views/logManage'
-
+import home from "@/views/home";
+import register from "@/components/register";
+import login from "@/components/login";
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path:'/',
+      name: 'home',
+      component: home,
+    },
+    {
+      path:'/login',
+      name: 'login',
+      component: login,
+    },
+    {
+      path:'/register',
+      name: 'register',
+      component: register,
+    },
+    {
+      path: '/index',
       name: 'index',
-      component: index
+      component: index,
     },
     {
       path: '/message',

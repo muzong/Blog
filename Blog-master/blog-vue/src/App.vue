@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-    <bar/>
+    <bar></bar>
     <router-view/>
-    <bottom/>
+    <bottom></bottom>
   </div>
 </template>
 
 <script>
   import bar from '@/components/bar'
   import bottom from '@/components/bottom'
-
   export default {
     components: {bar, bottom},
-    name: 'App'
+    name: 'App',
   }
 </script>
 

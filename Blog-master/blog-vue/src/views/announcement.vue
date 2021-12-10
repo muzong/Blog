@@ -1,6 +1,10 @@
 <template>
-  <el-card id="announcement" v-loading="loading">
+  <el-card id="announcement" >
     <br/>
+    <p>
+      <span style="color:#67C23A" class="el-icon-document">本站公告</span>
+    </p>
+    <hr />
     <div v-if="loading" style="margin: 35% 0"></div>
     <div v-for="announcement in announcementList"
          style="text-align: left;padding-left: 2%;">
@@ -85,7 +89,7 @@
 </script>
 <style scoped>
   #announcement {
-    margin: 10px 5% 0 5%;
+    margin: 20px 0;
   }
 
   .subscript {
